@@ -27,7 +27,7 @@ function Sidebar() {
   const { pathname } = useLocation()
 
   return (
-    <aside className="hidden md:block w-[230px] lg:w-[320px] min-h-screen fixed left-0 top-0 pt-[90px] pb-8 bg-[#F5F2EF] border-r border-[#E6D9CF]">
+    <aside className="hidden md:block w-[230px] lg:w-[320px] min-h-screen fixed left-0 top-0 pt-[90px] pb-8 bg-card border-r border-border">
       <nav className="flex flex-col gap-1 pl-6 pr-2 mt-2">
         {sidebarLinks.map(link => {
           const isActive = pathname === link.path
@@ -37,10 +37,10 @@ function Sidebar() {
               className={`
                 flex items-center gap-3 px-4 py-3 my-1 rounded-full transition
                 ${isActive
-                  ? "bg-[#0f0f0f] text-white shadow"
-                  : "bg-transparent text-[#3a332d] hover:bg-[#efe9e4] hover:text-[#2c7b89]"}
+                  ? "bg-navbar text-primary-foreground shadow"
+                  : "bg-transparent text-foreground hover:bg-background hover:text-accent"}
               `}
-              style={{ outline: isActive ? "2px solid #C8BDB3" : undefined }}
+              style={{ outline: isActive ? "2px solid var(--color-border)" : undefined }}
               onClick={() => navigate(link.path)}
             >
               {link.icon}

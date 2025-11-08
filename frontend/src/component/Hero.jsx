@@ -32,9 +32,9 @@ function Hero({ heroData }) {
 
         {/* Button fixed with text */}
         <div className="mt-6 flex justify-center md:justify-start">
-          <button className="px-10 py-3 bg-[#0EA5E9] rounded-full text-lg font-semibold shadow-lg 
-                             hover:bg-[#0284C7] transition-all duration-300 hover:scale-105">
-            Shop Now
+          <button className="px-10 py-3 bg-primary text-primary-foreground rounded text-lg font-semibold shadow-lg 
+                             hover:opacity-90 transition-all duration-300 hover:scale-105">
+            Shop Now →
           </button>
         </div>
       </motion.div>

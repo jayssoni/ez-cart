@@ -3,7 +3,7 @@ import logo from "../assets/logo.png"
 
 function Footer() {
   return (
-    <div className='w-full md:h-[36vh] h-[21vh] mb-20 md:mb-0 bg-[#1d313a] text-[#F5F2EF]'>
+    <div className='w-full md:h-[36vh] h-[21vh] mb-20 md:mb-0 bg-navbar text-primary-foreground'>
       <div className='w-full md:h-[30vh] h-[15vh] flex flex-wrap md:flex-nowrap items-center justify-around px-6 py-4'>
         <div className='md:w-[30%] w-[100%] flex flex-col gap-3'>
           <div className='flex items-center gap-2'>
@@ -18,10 +18,10 @@ function Footer() {
         <div className='md:w-[25%] w-[45%] flex flex-col items-center text-center gap-3'>
           <p className='text-xl font-semibold'>COMPANY</p>
           <ul className='text-base space-y-2'>
-            <li className='cursor-pointer hover:text-[#9B8C80]'>Home</li>
-            <li className='cursor-pointer hover:text-[#9B8C80]'>About us</li>
-            <li className='cursor-pointer hidden md:block hover:text-[#9B8C80]'>Delivery</li>
-            <li className='cursor-pointer hover:text-[#9B8C80]'>Privacy Policy</li>
+            <li className='cursor-pointer hover:text-accent'>Home</li>
+            <li className='cursor-pointer hover:text-accent'>About us</li>
+            <li className='cursor-pointer hidden md:block hover:text-accent'>Delivery</li>
+            <li className='cursor-pointer hover:text-accent'>Privacy Policy</li>
           </ul>
         </div>
         <div className='md:w-[25%] w-[45%] flex flex-col items-center text-center gap-3'>
@@ -34,8 +34,8 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className='w-full h-[1px] bg-slate-400'></div>
-      <div className='w-full h-[5vh]bg-[#1d313a] text-[#F5F2EF] flex items-center justify-center font-semibold text-sm'>
+      <div className='w-full h-[1px] bg-border'></div>
+      <div className='w-full h-[5vh] bg-navbar text-primary-foreground flex items-center justify-center font-semibold text-sm'>
         Copyright 2025 @ezcart.com - All Rights Reserved
       </div>
     </div>

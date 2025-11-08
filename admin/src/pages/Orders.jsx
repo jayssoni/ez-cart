@@ -36,25 +36,25 @@ function Orders() {
   }, [])
 
   return (
-    <div className="w-screen min-h-screen bg-[#EFE9E4] text-[#2b2622]">
+    <div className="w-screen min-h-screen bg-background text-foreground">
       <Nav />
       <div className="flex">
         <Sidebar />
         <div className="w-full lg:ml-[320px] md:ml-[240px] px-4 md:px-8 pt-24 pb-16">
-          <h1 className="text-3xl font-semibold text-[#3a332d] mb-6">All Orders</h1>
+          <h1 className="text-3xl font-semibold mb-6">All Orders</h1>
 
           <div className="grid gap-5">
             {orders.map((order) => (
               <div
                 key={order._id}
-                className="w-full bg-white rounded-2xl p-5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] flex flex-col lg:flex-row lg:items-center justify-between gap-4"
+                className="w-full bg-card rounded-2xl p-5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] flex flex-col lg:flex-row lg:items-center justify-between gap-4"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-[#F5F2EF] rounded-xl grid place-items-center text-[#3a332d]">
+                  <div className="w-14 h-14 bg-background rounded-xl grid place-items-center">
                     <SiEbox className="w-8 h-8" />
                   </div>
                   <div>
-                    <div className="text-[#3a332d] text-sm md:text-base">
+                    <div className="text-sm md:text-base">
                       {order.items.map((it, idx) => (
                         <span key={`${order._id}-${idx}`}>
                           {it.name.toUpperCase()} × {it.quantity} <span>{it.size}</span>
@@ -62,7 +62,7 @@ function Orders() {
                         </span>
                       ))}
                     </div>
-                    <div className="text-sm text-[#9B8C80] mt-2 space-y-0.5">
+                    <div className="text-sm text-muted mt-2 space-y-0.5">
                       <p>{order.address.firstName + ' ' + order.address.lastName}</p>
                       <p>{order.address.street}</p>
                       <p>
@@ -74,20 +74,20 @@ function Orders() {
                   </div>
                 </div>
 
-                <div className="text-sm text-[#4b453f]">
+                <div className="text-sm">
                   <p>Items: {order.items.length}</p>
                   <p>Method: {order.paymentMethod}</p>
                   <p>Payment: {order.payment ? 'Done' : 'Pending'}</p>
                   <p>Date: {new Date(order.date).toLocaleDateString()}</p>
-                  <p className="text-xl font-semibold text-[#2b2622] mt-1">₹ {order.amount}</p>
+                  <p className="text-xl font-semibold mt-1">₹ {order.amount}</p>
                 </div>
 
                 <div className="min-w-[220px]">
-                  <label className="text-sm text-[#9B8C80] block mb-2">Update Status</label>
+                  <label className="text-sm text-muted block mb-2">Update Status</label>
                   <select
                     value={order.status}
                     onChange={(e) => statusHandler(e, order._id)}
-                    className="w-full h-11 rounded-xl bg-[#F5F2EF] border border-[#E6D9CF] focus:outline-none focus:ring-2 focus:ring-[#C8BDB3] px-3"
+                    className="w-full h-11 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-accent px-3"
                   >
                     <option value="Order Placed">Order Placed</option>
                     <option value="Packing">Packing</option>
@@ -100,7 +100,7 @@ function Orders() {
             ))}
 
             {orders.length === 0 && (
-              <div className="text-[#9B8C80] bg-white rounded-2xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+              <div className="text-muted bg-card rounded-2xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
                 No orders found.
               </div>
             )}

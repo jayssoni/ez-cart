@@ -37,27 +37,27 @@ function Login() {
   }
 
   return (
-    <div className="w-screen min-h-screen bg-[#EFE9E4] text-[#2b2622] flex flex-col items-center">
+    <div className="w-screen min-h-screen bg-background text-foreground flex flex-col items-center">
       <div className="w-full h-20 flex items-center gap-3 px-6">
         <img className="w-9 h-9" src={logo} alt="OneCart" />
         <h1 className="text-xl font-semibold">OneCart</h1>
       </div>
 
       <div className="text-center mt-6 mb-6">
-        <h2 className="text-3xl font-semibold text-[#3a332d]">Admin Login</h2>
-        <p className="text-[#9B8C80] mt-2">Welcome back. Sign in to continue.</p>
+        <h2 className="text-3xl font-semibold">Admin Login</h2>
+        <p className="text-muted mt-2">Welcome back. Sign in to continue.</p>
       </div>
 
-      <div className="w-[92%] max-w-md bg-white border border-[#E6D9CF] rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.08)] p-6">
+      <div className="w-[92%] max-w-md bg-card border border-border rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.08)] p-6">
         <form onSubmit={AdminLogin} className="grid gap-4">
           <div>
-            <label htmlFor="email" className="block mb-2 text-[#4b453f] font-medium">
+            <label htmlFor="email" className="block mb-2 font-medium">
               Email
             </label>
             <input
               id="email"
               type="email"
-              className="w-full h-12 rounded-xl bg-[#F5F2EF] border border-[#E6D9CF] focus:outline-none focus:ring-2 focus:ring-[#C8BDB3] px-4 placeholder:text-[#9B8C80]"
+              className="w-full h-12 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-accent px-4 placeholder:text-muted"
               placeholder="admin@onecart.com"
               required
               onChange={(e) => setEmail(e.target.value)}
@@ -66,13 +66,13 @@ function Login() {
           </div>
 
           <div className="relative">
-            <label htmlFor="password" className="block mb-2 text-[#4b453f] font-medium">
+            <label htmlFor="password" className="block mb-2 font-medium">
               Password
             </label>
             <input
               id="password"
               type={show ? 'text' : 'password'}
-              className="w-full h-12 rounded-xl bg-[#F5F2EF] border border-[#E6D9CF] focus:outline-none focus:ring-2 focus:ring-[#C8BDB3] px-4 pr-10 placeholder:text-[#9B8C80]"
+              className="w-full h-12 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-accent px-4 pr-10 placeholder:text-muted"
               placeholder="••••••••"
               required
               onChange={(e) => setPassword(e.target.value)}
@@ -81,7 +81,7 @@ function Login() {
             <button
               type="button"
               aria-label={show ? 'Hide password' : 'Show password'}
-              className="absolute right-3 top-10 text-[#9B8C80]"
+              className="absolute right-3 top-10 text-muted"
               onClick={() => setShow((p) => !p)}
             >
               {show ? <IoEye size={20} /> : <IoEyeOutline size={20} />}
@@ -91,7 +91,7 @@ function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full h-12 mt-2 rounded-full bg-[#0f0f0f] text-white font-semibold hover:opacity-90 disabled:opacity-60"
+            className="w-full h-12 mt-2 rounded-full bg-navbar text-primary-foreground font-semibold hover:opacity-90 disabled:opacity-60"
           >
             {loading ? 'Signing in…' : 'Login'}
           </button>
